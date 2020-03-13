@@ -2,6 +2,7 @@ package com.lee.readJson.testJson;
 
 import com.google.common.collect.ListMultimap;
 import com.lee.readJson.util.JsonConfig;
+import com.lee.util.log.Logging;
 
 public class ConstJson extends JsonConfig {
 
@@ -13,10 +14,10 @@ public class ConstJson extends JsonConfig {
     public void check(ListMultimap listMultimap) {
         super.check(listMultimap);
 
-        for (ParseJson type:ParseJson.values()) {
-            if (type.name().equals(this.name)){
+        for (ParseJson type : ParseJson.values()) {
+            if (type.name().equals(this.name)) {
                 type.apply(value);
-                System.out.println("exchange "+desc);
+                Logging.info("exchange:{}", desc);
                 break;
             }
         }

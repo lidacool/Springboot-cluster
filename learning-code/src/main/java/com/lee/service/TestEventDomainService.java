@@ -1,11 +1,11 @@
 package com.lee.service;
 
-import com.lee.event.RegistryAdapter;
 import com.lee.event.RegistryAdapterEvent;
 import com.lee.event.Subscribe;
 import com.lee.event.entity.TestEventEntity;
 import com.lee.event.global.Task;
 import com.lee.event.global.TaskContext;
+import com.lee.util.log.Logging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,8 +27,8 @@ public class TestEventDomainService extends RegistryAdapterEvent {
     @Subscribe
     public void onEventTest(TestEventEntity eventEntity) {
         taskContext.schedule(Task.once("onEventTest", 10, TimeUnit.SECONDS, () -> {
-            System.out.println("哈哈，这里是异步事件调用，另起线程异步执行的方法，可以用来缓解单线程不需要实时同步的压力");
-            System.out.println(eventEntity.content);
+            Logging.info("这里是异步事件调用，另起线程异步执行的方法，可以用来缓解单线程不需要实时同步的压力!");
+            Logging.info(eventEntity.content);
         }));
     }
 

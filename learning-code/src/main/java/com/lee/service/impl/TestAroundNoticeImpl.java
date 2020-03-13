@@ -106,6 +106,6 @@ public class TestAroundNoticeImpl implements TestAroundNotice {
 
     @Override
     public void test() {
-        System.out.println("test agent");
+        Logging.info("test agent");
     }
 }
