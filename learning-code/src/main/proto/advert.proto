@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.lee.protobuf";
+option java_outer_classname = "PayInfoProtobuf";
+
+message PayInfoProto{
+     int32 userId = 1;
+     string userName = 2;
+     int64 count = 3;
+     int64 totalPay = 4;
+}

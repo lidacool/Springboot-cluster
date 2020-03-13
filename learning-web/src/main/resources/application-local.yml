@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+learning:
+  redis:
+    master: node1:127.0.0.1:6379
+    slave: 127.0.0.1:6379
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/learning?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.lee

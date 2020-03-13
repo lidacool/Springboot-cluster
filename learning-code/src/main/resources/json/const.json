@@ -1,0 +1,32 @@
+{
+  "1": {
+    "id": 1,
+    "desc": "int",
+    "name": "test1",
+    "value": 1
+  },
+  "2": {
+    "id": 2,
+    "desc": "数值计算",
+    "name": "test2",
+    "value": "a+2*b+3*c+4*d"
+  },
+  "3": {
+    "id": 3,
+    "desc": "string split",
+    "name": "test3",
+    "value": "3,0;4,88;5,10;6,2;-1,0;-2,0"
+  },
+  "4": {
+    "id": 4,
+    "desc": "string split 2",
+    "name": "test4",
+    "value": "2016209,1"
+  },
+  "5": {
+    "id": 5,
+    "desc": "string",
+    "name": "test5",
+    "value": "string test"
+  }
+}
