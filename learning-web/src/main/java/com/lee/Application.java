@@ -56,17 +56,10 @@ import java.util.*;
  */
 
 //@MapperScan(value = {"com.lee"})//多项目mapper扫描, "com.lee.user.mapper"
-@SpringBootApplication(exclude = { JacksonAutoConfiguration.class }, scanBasePackages = { "com.lee" })
-//@SpringBootApplication
+@SpringBootApplication(exclude = { JacksonAutoConfiguration.class })
 public class Application {
 
     public static void main(String args[]) {
-
-//        testMatchString();
-//        testJedis();
-//        SpringApplication.run(Application.class,args);
-//        testJsonParse();
-
         try {
             //*URLClassLoader用于加载其他项目的类文件可供url访问*//*
             processUsageClassPath();
@@ -79,7 +72,6 @@ public class Application {
                 .sources(Application.class)
                 .bannerMode(Banner.Mode.OFF)
                 .run(args);
-
     }
 
     private static Set<String> getPaths() {

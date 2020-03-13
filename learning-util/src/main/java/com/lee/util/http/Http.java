@@ -10,6 +10,10 @@ import java.util.Map;
 public class Http {
 
 
+    /**
+     * okhttp4.x 已升级为kotlin
+     * 这里用的3.x
+     */
     public static String post(String url, Map<String, Object> params) {
 
         FormBody.Builder builder = new FormBody.Builder();

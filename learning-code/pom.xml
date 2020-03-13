@@ -66,14 +66,6 @@
             <version>3.5.0</version>
         </dependency>
 
-        <!--web启动时动态加载了admin-backend的类，shiro配置bean需要加载该依赖，但是web项目只依赖java-test-code项目，无法加载
-        该依赖的jar，故将admin-backend的依赖加载此处供其依赖-->
-        <!--Failed to introspect Class [classA] from ClassLoader [sun.misc.Launcher$AppClassLoader@14dad5dc]-->
-        <!--<dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.3.2</version>
-        </dependency>-->
     </dependencies>
 
 </project>
