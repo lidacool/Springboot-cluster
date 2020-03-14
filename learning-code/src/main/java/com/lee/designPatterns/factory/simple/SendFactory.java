@@ -1,6 +1,8 @@
 package com.lee.designPatterns.factory.simple;
 
-
+/**
+ * 简单工厂模式
+ */
 public class SendFactory {
 
     //common factory pattern

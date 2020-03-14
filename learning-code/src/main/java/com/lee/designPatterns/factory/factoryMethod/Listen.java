@@ -3,13 +3,11 @@ package com.lee.designPatterns.factory.factoryMethod;
 
 
 /**
+ * 工厂方法模式
+ * 其核心结构有四个角色，分别是抽象工厂；具体工厂；抽象产品；具体产品
  *
- * 此乃工厂方法模式
- *
- * 真正的抽象工厂本意是为了解决 工厂方法模式创建的工厂类过多增加了系统的开销
- *
- * 所以抽象工厂考虑将一些相关的具体类组成一个“具体类族”，由同一个工厂来统一生产
- * https://blog.csdn.net/zyhlwzy/article/details/80707488
+ * interface Provider:抽象工厂 callFactory/radioFactory:具体工厂
+ * interface Listen：抽象产品  callListen/radioListen:具体产品
  *
  * */
 public interface Listen {
