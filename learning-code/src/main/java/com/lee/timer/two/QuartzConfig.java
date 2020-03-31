@@ -21,6 +21,7 @@ public class QuartzConfig {
      * no.1 Redis/Zookeeper 分布式锁--执行周期频繁的任务 加锁略显不适
      * no.2 配置开关--注解控制、配置常量、配置数据库  维护代价高
      * no.3 Elastic Job
+     * no.4 代码分离、IP 限制
      */
 
     // 任务调度
