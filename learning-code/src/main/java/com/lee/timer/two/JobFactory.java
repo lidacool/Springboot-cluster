@@ -4,7 +4,11 @@ import org.quartz.*;
 
 public abstract class JobFactory implements Job {
 
-    public void startJob(Scheduler scheduled) {
+    /**
+     * 不允许重写
+     * @param scheduled
+     */
+    public final void startJob(Scheduler scheduled) {
         try {
             startJob(scheduled, getCommonJob());
         } catch (SchedulerException e) {
