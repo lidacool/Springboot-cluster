@@ -1,4 +1,4 @@
-package com.lee.timer.repo;
+package com.lee.timer.one.repo;
 
 import com.lee.util.jredis.JRedis;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.lee.timer.repo;
+package com.lee.timer.one.repo;
 
 public interface TimerRepo {
 

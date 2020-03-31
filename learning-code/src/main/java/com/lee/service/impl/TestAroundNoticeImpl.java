@@ -6,7 +6,7 @@ import com.lee.event.entity.TestEventEntity;
 import com.lee.readJson.testJson.ConstData;
 import com.lee.readJson.testJson.ParseJson;
 import com.lee.service.TestAroundNotice;
-import com.lee.timer.TimerTask;
+import com.lee.timer.one.TimerTask;
 import com.lee.util.jredis.JRedis;
 import com.lee.util.json.JsonUtil;
 import com.lee.util.log.Logging;

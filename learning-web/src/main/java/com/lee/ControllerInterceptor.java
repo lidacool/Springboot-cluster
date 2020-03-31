@@ -45,7 +45,7 @@ public class ControllerInterceptor {
         long start = TimeUtil.currentTimeMillis();
         Map<String, Object> result = new HashMap<>();
         try {
-            Map<String, Object> data = (Map<String, Object>) invocation.proceed();
+            Object data = invocation.proceed();
             result.put("success", true);
             result.put("status", Status.success);
             result.put("data", data);

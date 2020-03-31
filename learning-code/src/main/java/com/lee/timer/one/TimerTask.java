@@ -1,4 +1,4 @@
-package com.lee.timer;
+package com.lee.timer.one;
 
 import com.lee.InjectUtil;
 import com.lee.util.log.Logging;
@@ -8,7 +8,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 定时任务的实现
+ * 定时任务的实现  利用锁的方式控制定时 感觉很鸡肋 会有延迟
  * ScheduledExecutorService.scheduleAtFixedRate
  * */
 public class TimerTask {
@@ -27,6 +27,10 @@ public class TimerTask {
         }
         executor = Executors.newScheduledThreadPool(1);
 
+        /**
+         * 静态方法想要得到一个bean  显然无法直接注入
+         * 可以在启动时实现InitializingBean 的afterPropertiesSet方法将所有bean放到静态集合存起来
+         */
         task = new TimerTask(InjectUtil.getBean("timerTaskExecutor"));
         task.start2();
     }
