@@ -25,7 +25,7 @@ public abstract class JobFactory implements Job {
      * @param commonJob
      * @throws SchedulerException
      */
-    private static void startJob(Scheduler scheduler, CommonJob commonJob) throws SchedulerException {
+    private void startJob(Scheduler scheduler, CommonJob commonJob) throws SchedulerException {
         JobDetail jobDetail = JobBuilder
                 .newJob(commonJob.getaClass())
                 .withIdentity(commonJob.getJob(), commonJob.getGroup())

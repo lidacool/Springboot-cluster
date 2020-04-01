@@ -1,7 +1,5 @@
 package com.lee.invokeInterface;
 
-import com.lee.timer.TaskThread;
-import com.lee.timer.TimerTask;
 import com.lee.util.random.RandomUtil;
 
 import java.io.BufferedReader;
