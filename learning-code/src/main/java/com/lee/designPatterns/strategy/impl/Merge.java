@@ -3,7 +3,7 @@ package com.lee.designPatterns.strategy.impl;
 import com.lee.designPatterns.strategy.AbstractAlgorithm;
 import com.lee.designPatterns.strategy.IAlgorithm;
 
-public class Merge extends AbstractAlgorithm implements IAlgorithm {
+public class Merge extends AbstractAlgorithm{
 
     //时间复杂度无论好坏都是NlogN
     //空间复杂度N，最多需要存放N个数据

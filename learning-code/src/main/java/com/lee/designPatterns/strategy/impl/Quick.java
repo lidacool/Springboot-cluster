@@ -6,7 +6,7 @@ import com.lee.designPatterns.strategy.IAlgorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Quick extends AbstractAlgorithm implements IAlgorithm {
+public class Quick extends AbstractAlgorithm{
 
     //快速排序是一个原地排序算法，是一个不稳定的排序算法，因为其在数据交换过程中可能会改变相等元素的原始位置。
     //如果快速排序每次都将数据分成相等的两部分，则快排的时间复杂度和归并排序相同,

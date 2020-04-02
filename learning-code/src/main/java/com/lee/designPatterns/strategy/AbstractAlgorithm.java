@@ -1,6 +1,8 @@
 package com.lee.designPatterns.strategy;
 
-public abstract class AbstractAlgorithm {
+public abstract class AbstractAlgorithm implements IAlgorithm{
+
+    public abstract void sort(int[] arr);
 
     //可以用于一些算法格式的整理转换以供impl里面的类继承
 

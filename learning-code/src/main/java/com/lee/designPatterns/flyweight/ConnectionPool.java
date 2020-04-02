@@ -5,6 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Vector;
 
+/**
+ * 共享某些固定的细粒度的类
+ * eg: 1.string字符的不变性
+ *     2.自动装箱
+ *     3.数据库连接池
+ *
+ */
 public class ConnectionPool {
 
     private Vector<Connection> pool;

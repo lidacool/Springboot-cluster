@@ -3,7 +3,7 @@ package com.lee.designPatterns.strategy.impl;
 import com.lee.designPatterns.strategy.AbstractAlgorithm;
 import com.lee.designPatterns.strategy.IAlgorithm;
 
-public class Insertion extends AbstractAlgorithm implements IAlgorithm {
+public class Insertion extends AbstractAlgorithm{
 
     //小规模数据，基本有序十分高校
     //循环次数(n-1)*x
