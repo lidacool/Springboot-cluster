@@ -32,9 +32,11 @@ public abstract class JobFactory implements Job {
                 .withIdentity(commonJob.getJob(), commonJob.getGroup())
                 .usingJobData(commonJob.getMsg(), commonJob.getDesc())
                 .build();
-        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(commonJob.getCoreTime());
-        Trigger trigger = TriggerBuilder.newTrigger().withIdentity(commonJob.getJob(), commonJob.getGroup())
-                .withSchedule(cronScheduleBuilder).build();
+        Trigger trigger = TriggerBuilder
+                .newTrigger()
+                .withIdentity(commonJob.getJob(), commonJob.getGroup())
+                .withSchedule(CronScheduleBuilder.cronSchedule(commonJob.getCoreTime()))
+                .build();
         scheduler.scheduleJob(jobDetail, trigger);
     }
 

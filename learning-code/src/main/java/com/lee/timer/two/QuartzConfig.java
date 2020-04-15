@@ -1,6 +1,7 @@
 package com.lee.timer.two;
 
 import com.lee.timer.two.business.Business;
+import com.lee.timer.two.business.QuartzJob1;
 import com.lee.util.classUtil.ClassUtil;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class QuartzConfig {
 
     /**
      * Pro 1 集群下重复执行问题
-     *
+     * <p>
      * no.1 Redis/Zookeeper 分布式锁--执行周期频繁的任务 加锁略显不适
      * no.2 配置开关--注解控制、配置常量、配置数据库  维护代价高
      * no.3 Elastic Job
@@ -50,6 +51,25 @@ public class QuartzConfig {
             e.printStackTrace();
         }
         scheduler.start();
+    }
+
+    public void addNewJob(CommonJob commonJob) {
+        JobDetail jobDetail = JobBuilder
+                .newJob(commonJob.getaClass())
+                .withIdentity(commonJob.getJob(), commonJob.getGroup())
+                .usingJobData(commonJob.getMsg(), commonJob.getDesc())
+                .build();
+        Trigger trigger = TriggerBuilder
+                .newTrigger()
+                .withIdentity(commonJob.getJob(), commonJob.getGroup())
+                .startNow()
+                .withSchedule(CronScheduleBuilder.cronSchedule(commonJob.getCoreTime()))
+                .build();
+        try {
+            scheduler.scheduleJob(jobDetail, trigger);
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

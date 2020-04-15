@@ -1,6 +1,10 @@
 package com.lee;
 
+import com.lee.timer.two.CommonJob;
 import com.lee.timer.two.QuartzConfig;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -23,6 +27,13 @@ public class QuartzJobListener implements ApplicationListener<ContextRefreshedEv
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
+
+        quartzConfig.addNewJob(new CommonJob("","","","","", new Job() {
+            @Override
+            public void execute(JobExecutionContext context) throws JobExecutionException {
+
+            }
+        }.getClass()));
     }
 
     /**
